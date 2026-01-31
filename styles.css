@@ -245,6 +245,13 @@ body {
   min-height: 100vh;
 }
 
+/* مساحة فارغة كـ header */
+.page-header {
+  height: var(--space-8);
+  min-height: max(var(--space-8), env(safe-area-inset-top));
+  flex-shrink: 0;
+}
+
 /* تابلت: شاشات متوسطة */
 @media (min-width: 480px) {
   .page {
@@ -367,6 +374,28 @@ body {
 
   .footer-copy {
     font-size: var(--text-sm);
+  }
+}
+
+/* حتى 425px: الصورة والهيرو يبقون بالمنتصف */
+@media (max-width: 425px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-avatar-wrap {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-name,
+  .hero-bio,
+  .hero-location {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
