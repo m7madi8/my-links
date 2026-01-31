@@ -14,6 +14,7 @@
   function hideLoader() {
     if (!loaderEl) return;
     loaderEl.setAttribute('data-hidden', 'true');
+    document.body.classList.add('page-loaded');
     setTimeout(function () {
       loaderEl.remove();
     }, 500);

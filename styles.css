@@ -419,6 +419,8 @@ body {
 .hero {
   text-align: center;
   margin-bottom: var(--space-8);
+  opacity: 0;
+  transform: translateY(28px);
 }
 
 .hero-avatar-wrap {
@@ -550,6 +552,8 @@ body {
   gap: var(--space-4);
   margin-bottom: var(--space-8);
   flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(24px);
 }
 
 .social-icon {
@@ -726,6 +730,8 @@ body {
   border-top: 1px solid var(--border);
   text-align: center;
   position: relative;
+  opacity: 0;
+  transform: translateY(24px);
 }
 
 .footer-brand {
@@ -833,6 +839,80 @@ body {
 
 .toast[data-visible="true"][hidden] {
   visibility: visible;
+}
+
+/* ============================================
+   PAGE LOAD — تأثيرات حركية جذابة
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInUpCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.page-loaded .hero {
+  animation: fadeInUp 0.75s var(--ease-out) 0.1s forwards;
+}
+
+.page-loaded .social-row {
+  animation: fadeInUp 0.65s var(--ease-out) 0.3s forwards;
+}
+
+.page-loaded .link-card:nth-child(1) {
+  animation: fadeInUpCard 0.55s var(--ease-out) 0.5s forwards;
+}
+.page-loaded .link-card:nth-child(2) {
+  animation: fadeInUpCard 0.55s var(--ease-out) 0.65s forwards;
+}
+.page-loaded .link-card:nth-child(3) {
+  animation: fadeInUpCard 0.55s var(--ease-out) 0.8s forwards;
+}
+.page-loaded .link-card:nth-child(4) {
+  animation: fadeInUpCard 0.55s var(--ease-out) 0.95s forwards;
+}
+.page-loaded .link-card:nth-child(5) {
+  animation: fadeInUpCard 0.55s var(--ease-out) 1.1s forwards;
+}
+
+.page-loaded .footer {
+  animation: fadeInUp 0.65s var(--ease-out) 1.25s forwards;
+}
+
+.page-loaded .link-card:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .social-row,
+  .footer,
+  .link-card {
+    opacity: 1;
+    transform: none;
+  }
+  .page-loaded .hero,
+  .page-loaded .social-row,
+  .page-loaded .link-card,
+  .page-loaded .footer {
+    animation: none;
+  }
 }
 
 /* شاشات عريضة جداً: المحتوى يبقى بحد أقصى مريح */
