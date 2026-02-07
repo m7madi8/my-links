@@ -37,6 +37,7 @@
   display: block;
   object-fit: cover;
   object-position: center 60%;
+  transform: scale(1.35);
 }
 
 .product-hero-overlay {
