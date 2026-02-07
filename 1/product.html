@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dessert Box — Farah Ammar</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%232D0B59' width='32' height='32' rx='6'/><text x='16' y='22' font-family='serif' font-size='18' font-weight='bold' fill='%23C9A7FF' text-anchor='middle'>F</text></svg>" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
+</head>
+<body class="product-page">
+  <nav class="nav-minimal nav-scrolled">
+    <div class="container-fluid px-4">
+      <a class="nav-brand" href="index.html">Farah Ammar</a>
+      <a class="nav-order" href="index.html#product">Back</a>
+    </div>
+  </nav>
+
+  <main class="product-main">
+    <div class="product-hero">
+      <div class="product-hero-image">
+        <picture>
+          <source media="(min-width: 1400px)" srcset="item3.png">
+          <source media="(min-width: 576px)" srcset="item2.png">
+          <source media="(min-width: 383px) and (max-width: 575px)" srcset="item3.png">
+          <img src="item-1.jpeg" alt="The Dessert Box" width="1200" height="750" decoding="async">
+        </picture>
+      </div>
+      <div class="product-hero-overlay"></div>
+    </div>
+
+    <div class="product-content">
+      <div class="product-content-inner">
+        <a href="index.html#product" class="product-back"><i class="bi bi-arrow-left"></i> Back to home</a>
+
+        <header class="product-header">
+          <h1 class="product-name">The Cookies Box</h1>
+          <p class="product-price">120 ₪</p>
+          <p class="product-lead">Luxury assortment of handcrafted sweets in an elegant gift box. Perfect for gifting or treating yourself.</p>
+        </header>
+
+        <section class="product-details">
+          <h2 class="product-details-title">What's inside</h2>
+          <ul class="product-details-list">
+            <li>Signature Kunafa Bites</li>
+            <li>Assorted Baklava</li>
+            <li>Chocolate Truffles</li>
+            <li>Rose & Pistachio Maamoul</li>
+            <li>Date & Nut Cookies</li>
+          </ul>
+        </section>
+
+        <section class="product-buy" id="buy">
+          <h2 class="product-buy-title">Order now</h2>
+          <p class="product-buy-desc">Choose your payment method and we'll confirm via WhatsApp.</p>
+          <div class="product-buy-btns">
+            <a href="https://wa.me/972501234567?text=Hi%2C%20I%20want%20to%20order%20the%20Dessert%20Box%20(120%E2%82%AA)%20-%20Pay%20by%20Visa%2FMastercard" class="btn-card btn-pay-card" target="_blank" rel="noopener">Pay by Visa / Mastercard</a>
+            <a href="https://wa.me/972501234567?text=Hi%2C%20I%20want%20to%20order%20the%20Dessert%20Box%20(120%E2%82%AA)%20-%20Cash%20on%20delivery" class="btn-card btn-cod" target="_blank" rel="noopener">Cash on delivery</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-block">
+        <span class="footer-brand">Farah Ammar</span>
+        <p class="footer-tagline">Luxury dessert box · Crafted with love</p>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-connect">
+        <span class="footer-label">Connect</span>
+        <div class="footer-links">
+          <a href="https://wa.me/972501234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© <span id="year"></span> Farah Ammar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
