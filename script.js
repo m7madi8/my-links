@@ -28,14 +28,18 @@
   }
 
   // --- Theme Toggle ---
-  const THEME_KEY = 'bio-link-theme';
   const root = document.documentElement;
+  const initialTheme = root.getAttribute('data-theme') || 'dark';
+  const isPhotographer = initialTheme === 'photographer' || initialTheme === 'photographer-light';
+  const THEME_KEY = isPhotographer ? 'photographer-bio-theme' : 'bio-link-theme';
 
   function getStoredTheme() {
     try {
-      return localStorage.getItem(THEME_KEY) || 'dark';
+      const stored = localStorage.getItem(THEME_KEY);
+      if (stored) return stored;
+      return initialTheme;
     } catch {
-      return 'dark';
+      return initialTheme;
     }
   }
 
@@ -55,7 +59,10 @@
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
       const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
+      let next;
+      if (current === 'photographer') next = 'photographer-light';
+      else if (current === 'photographer-light') next = 'photographer';
+      else next = current === 'dark' ? 'light' : 'dark';
       setTheme(next);
     });
   }
