@@ -838,6 +838,16 @@ body {
   font-weight: var(--weight-bold);
   color: var(--text-muted);
   letter-spacing: 0.05em;
+  filter: brightness(0);
+}
+
+[data-theme="photographer"] .footer-logo,
+[data-theme="photographer-light"] .footer-logo {
+  filter: brightness(0);
+}
+
+[data-theme="light"] .footer-logo {
+  filter: brightness(0);
 }
 
 .footer-copy {

@@ -29,17 +29,13 @@
 
   // --- Theme Toggle ---
   const root = document.documentElement;
-  const initialTheme = root.getAttribute('data-theme') || 'dark';
-  const isPhotographer = initialTheme === 'photographer' || initialTheme === 'photographer-light';
-  const THEME_KEY = isPhotographer ? 'photographer-bio-theme' : 'bio-link-theme';
+  const THEME_KEY = 'bio-link-theme';
 
   function getStoredTheme() {
     try {
-      const stored = localStorage.getItem(THEME_KEY);
-      if (stored) return stored;
-      return initialTheme;
+      return localStorage.getItem(THEME_KEY) || 'dark';
     } catch {
-      return initialTheme;
+      return 'dark';
     }
   }
 
@@ -55,19 +51,16 @@
     setTheme(stored);
   }
 
+  initTheme();
+
   const themeToggle = document.querySelector('.theme-toggle');
   if (themeToggle) {
-    themeToggle.addEventListener('click', function () {
-      const current = root.getAttribute('data-theme');
-      let next;
-      if (current === 'photographer') next = 'photographer-light';
-      else if (current === 'photographer-light') next = 'photographer';
-      else next = current === 'dark' ? 'light' : 'dark';
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
       setTheme(next);
     });
   }
-
-  initTheme();
 
   // --- Toast ---
   const toastEl = document.getElementById('toast');
